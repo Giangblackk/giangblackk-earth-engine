@@ -5,8 +5,6 @@ import {
 
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
 
-import { requestAPI } from './handler';
-
 /**
  * Initialization data for the giangblackk_earth_extension extension.
  */
@@ -27,16 +25,6 @@ const plugin: JupyterFrontEndPlugin<void> = {
           console.error('Failed to load settings for giangblackk_earth_extension.', reason);
         });
     }
-
-    requestAPI<any>('get_example')
-      .then(data => {
-        console.log(data);
-      })
-      .catch(reason => {
-        console.error(
-          `The giangblackk_earth_extension server extension appears to be missing.\n${reason}`
-        );
-      });
   }
 };
 

@@ -25,11 +25,6 @@ labext_name = "giangblackk_earth_extension"
 data_files_spec = [
     ("share/jupyter/labextensions/%s" % labext_name, str(lab_path.relative_to(HERE)), "**"),
     ("share/jupyter/labextensions/%s" % labext_name, str("."), "install.json"),
-    ("etc/jupyter/jupyter_server_config.d",
-     "jupyter-config/server-config", "giangblackk_earth_extension.json"),
-    # For backward compatibility with notebook server
-    ("etc/jupyter/jupyter_notebook_config.d",
-     "jupyter-config/nb-config", "giangblackk_earth_extension.json"),
 ]
 
 long_description = (HERE / "README.md").read_text()
@@ -48,9 +43,7 @@ setup_args = dict(
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
-    install_requires=[
-        "jupyter_server>=1.6,<2"
-    ],
+    install_requires=[],
     zip_safe=False,
     include_package_data=True,
     python_requires=">=3.6",
